@@ -7,8 +7,21 @@
 \graphicspath{{Images/}}
 \usepackage{hyperref}
 \usepackage{bm}
-\usepackage{braket}
 \usepackage[version=4]{mhchem}
+\usepackage{physics}
+\usepackage{braket}
+\usepackage{float}   % H option
 
 \usepackage{siunitx}
 \sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=trad-unsrt]{biblatex}
+\usepackage{xpatch}
+\xpatchbibmacro{name:andothers}{%
+	\bibstring{andothers}%
+}{%
+	\bibstring[\emph]{andothers}%
+}{}{}
+\addbibresource{Rest/thebib.bib}

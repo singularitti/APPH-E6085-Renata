@@ -1,0 +1,76 @@
+% !TEX root = ../review.tex
+
+\subsubsection{Kleinman--Bylander form of pseudopotential}
+As discussed before,
+HSC proposed a model pesudopotential, which is the or bare ion pesudopotential, written as
+\begin{equation}\label{eq:hsc-pp}
+	V_l(\bm{r}) = \mathcal{V} (r) + \sum_{l m} \ket{Y_{lm}} \delta V_l \bra{Y_{lm}},
+\end{equation}
+where $\mathcal{V} (r)$ is a pure local potential, potential
+$V_l^\text{SL} = \ket{Y_{lm}} \delta V_l \bra{Y_{lm}}$ is a semilocal
+\footnote{
+	semilocal: local in radial coordinate $r$ but nonlocal in angular coordinates $\theta$ and $\varphi$.
+}
+one but this involves $m n (n+1) / 2$ individual integrals for $m$ points
+with $n$ wave vectors in the Brillouin zone.
+HSC require that for $r > R_c$, the pesudopotential
+$V (r) \rightarrow - \frac{ Z }{ r }$, and thus
+$\delta V_l (r) \rightarrow 0 $ for $r > R_c$,
+which makes the need to calculate true wave-functions is minimized.
+K and B \cite{Kleinman:1982cx} noticed tried to rewrite it into a pure local potential and a pure
+nonlocal one. First they considered the relativistic form of $\eqref{eq:hsc-pp}$,
+i.e.,
+\begin{equation}
+	V_j(\bm{r}) = \mathcal{V} (r) + \sum_{jm} \ket{Y_{lm}} \delta V_j \bra{Y_{lm}},
+\end{equation}
+where $j = l \pm \frac{ 1 }{ 2 }$
+\footnote{
+	In non-relativistic approximation, $j = l \pm \frac{ 1 }{ 2 }$ is replaced by $l$.
+}
+, assume wave function
+$\Phi_j (\bm{r}) = \phi(r) Y_{lm} (\theta, \varphi)$,
+then replace the semilocal potential $V_j^\text{SL}$ with a pure nonlocal potential
+\begin{equation}\label{eq:nl-pp}
+	V_j^\text{NL} (\bm{r}, \bm{r}')
+	= \sum_{lm} \frac{ \ket{\delta V_j \Phi_{jm}}  \bra{\delta V_j \Phi_{jm}} }{
+		\braket{ \Phi_{jm} | \delta V_j | \Phi_{jm} } },
+\end{equation}
+here $\Phi_{jm}$ is the eigenfunction of $V_j^\text{SL}$.
+Then we have
+\begin{equation}\label{eq:vnl-phi}
+	\begin{split}
+		V_j^\text{NL} \ket{\Phi_{j'm'}}
+		&=
+		\sum_{lm} \frac{
+			\ket{\delta V_j \Phi_{jm}}  \braket{\delta V_j \Phi_{jm} | \Phi_{j'm'} }
+		}{
+			\braket{ \Phi_{jm} | \delta V_j | \Phi_{jm} }
+		} \\
+		&= \ket{ \delta V_{j'} \Phi_{j'm'} },
+	\end{split}
+\end{equation}
+and we also know
+\begin{equation}
+	\begin{split}
+		V_{j}^\text{SL} \ket{ \Phi_{j'm'} }
+		&= \ket{Y_{lm}} \delta V_{j'} \braket{Y_{lm} | \Phi_{j'm'} } \\
+		&= \ket{Y_{l'm'}} \delta V_{j'} \ket{\phi_{j'}} \\
+		&= \ket{ \delta V_{j'} \Phi_{j'm'} },
+	\end{split}
+\end{equation}
+so we conclude
+\begin{equation}\label{eq:kb-result}
+	V_j^\text{NL} \ket{\Phi_{j'm'}} = V_{j}^\text{SL} \ket{ \Phi_{j'm'} }.
+\end{equation}
+From $\eqref{eq:kb-result}$ we know that the nonlocal potential constructed by
+$\eqref{eq:nl-pp}$ is equivalent to the semilocal potential $V_{j}^\text{SL}$,
+because they result in the same eigenvalue. But the number of
+plane-wave integrals is reduced to $mn$.
+
+In $\eqref{eq:vnl-phi}$, $\bra{\delta V_j \Phi_{jm}}$ acts as a projector,\cite{martin2004electronic} makes
+\begin{equation}
+	\braket{\delta V_j \Phi_{jm} | \Phi_{j'm'} } = \int d\bm{r} \delta V_j (r)
+	\Phi_{jm} (\bm{r}) \Phi_{j'm'} (\bm{r}).
+\end{equation}
+This projector
+is local because $\delta V_j$ is $0$ out side core radius $R_c$, irrespective of how $\Phi_{jm}$ is.
