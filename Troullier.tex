@@ -1,4 +1,4 @@
-% !TEX root = ../review.tex
+% !TEX root = review.tex
 
 \subsubsection{Troullier}
 \label{sssec:troullier}
@@ -86,7 +86,7 @@ logarithmic derivative $\eqref{eq:ld}$ of all-electron wave-function and pesudo-
 
 \begin{figure}[H]
 	\centering
-	\begin{minipage}[bt]{.46\linewidth}
+	\begin{minipage}[t]{.46\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{tmfig1}
 		\caption{Total energy for diamond per primitive cell vs cutoff energy
@@ -95,7 +95,7 @@ logarithmic derivative $\eqref{eq:ld}$ of all-electron wave-function and pesudo-
 			\cite{Troullier:1991ey}}
 		\label{fig:tm-e:a}
 	\end{minipage}%
-	\hfill
+	\hfil
 	\begin{minipage}[t]{.46\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{tmfig8}
@@ -119,6 +119,7 @@ An depth of pseudopotential is also not a good convergence indicator,
 since the slower convergence can be from shallower pesudopotential (HSC for \ce{C})
 or from deeper pesudopotential (Kerker for \ce{Cu}).
 For \ce{Cu}, they use KB procedure and set $s$ potential as local component.
+The exchange-correlations are both \citeauthor{ceperley1980ground}'s method which parametrized by \citeauthor{perdew1981self}.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}[b]{.7\linewidth}
@@ -155,4 +156,3 @@ i.e., the logarithmic energy derivatives of pesudo-wave-functions math that of a
 		It shows good transferability and no ghost state of KB pesudopotential.}
 	\label{fig:tmfig6}
 \end{figure}
-The exchange-correlations are both \citeauthor{ceperley1980ground}'s method which parametrized by \citeauthor{perdew1981self}.

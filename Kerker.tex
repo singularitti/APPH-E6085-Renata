@@ -1,4 +1,4 @@
-% !TEX root = ../review.tex
+% !TEX root = review.tex
 
 Pesudopotential methods have $2$ major classes: the empirical ones
 and the \textit{ab initio} ones.
@@ -28,9 +28,9 @@ In the paper, Kerker chose $f(r)$ to be $\exp( p(r) )$ where
 Then it is easy to derive
 \begin{align}
 	\ln \bigg( \frac{ \chi_l(R_c) }{ R_c^{l+1} } \bigg)
-	  & = p(R_c), \label{eq:kerker0}                                              \\
+	  & = p(R_c), \label{eq:kerker0}                            \\
 	R_c \frac{ \chi_l'(R_c) }{ \chi_l(R_c) }
-	  & = l + 1 + R_c p'(R_c), \label{eq:kerker1}                                     \\
+	  & = l + 1 + R_c p'(R_c), \label{eq:kerker1}               \\
 	R_c^2 p''(R_c)
 	  & = R_c^2 V_l^\text{scr} (R_c) + (l + 1)^2 - R_c^2 \bigg(
 	\epsilon_l + \frac{ \chi_l'(R_c) }{ \chi_l(R_c) }
@@ -55,9 +55,9 @@ From $\eqref{eq:kerker-pp}$ the screened pesudopotential is given by
 \begin{align}
 	V_l^\text{scr} (r) & =
 	\begin{cases}
-		\mathcal{V} (r)                    & r \geq R_c, \\
+		\mathcal{V} (r)               & r \geq R_c, \\
 		\epsilon_l + \frac{ 2(l+1) }{ r } p'(r)
-    + \big(p'(r) \big)^2 + p''(r) & r \leq R_c,
+		+ \big(p'(r) \big)^2 + p''(r) & r \leq R_c,
 	\end{cases}
 \end{align}
 where $\mathcal{V}$ is the all-electron potential, $\epsilon_l$ is the
@@ -71,6 +71,19 @@ where $\lambda = 4 \alpha r^2 + 3 \beta r + 2 \gamma$.
 Troullier \emph{et. al.} generalized Kerker's method by simply increase
 the order of $p (r)$.\cite{troullier1990straightforward}
 This will be talked in section \ref{sssec:troullier}.
+From Fig. \ref{fig:kerkerfig1} we can see the $3d$ all-electron wave-function is
+already nodeless because there are no $d$ states in the core.
+So the norm-conserving condition does not have much benefits.
+This is the basis of the problem \citeauthor{Vanderbilt:1990is} will deal with, will be discussed in section \ref{sssec:us}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[height=0.5\textheight]{images/kerkerfig1}
+	\caption{All-electron wave-function and pesudo-wave-function for
+		\ce{Mo} $5s^1 4d^5 5p^0$ and core pesudopotential.\cite{Kerker:1980cs}}
+	\label{fig:kerkerfig1}
+\end{figure}
+
 
 
 
