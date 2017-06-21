@@ -1,7 +1,7 @@
 % !TeX document-id = {3edc8dc8-fcc4-4657-9ddf-037fbf395bb7}
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8
-%!BIB TS-program = biber
+%!BIB TS-program = bibtex
 %!TEX spellcheck = en_US
 % !TEX outputDirectory = build.noindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,7 +13,6 @@
 \author{Qi Zhang}								% Author
 \date{}										% Date
 
-%\addbibresource{ref.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
@@ -25,5 +24,6 @@
 \include{US}
 \include{PAW}
 
-%\printbibliography
+\bibliographystyle{unsrt}
+\bibliography{ref}
 \end{document}

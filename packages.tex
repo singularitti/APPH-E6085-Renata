@@ -11,17 +11,8 @@
 \usepackage{physics}
 \usepackage{braket}
 \usepackage{float}   % H option
-\usepackage{cite}
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage{mathtools}  % rcases
 
 \usepackage{siunitx}
 \sisetup{inter-unit-product = \ensuremath{{}\cdot{}}}
-
-\usepackage[american]{babel}
-\usepackage{csquotes}
-\usepackage[style=trad-unsrt]{biblatex}
-\usepackage{xpatch}
-\xpatchbibmacro{name:andothers}{%
-	\bibstring{andothers}%
-}{%
-	\bibstring[\emph]{andothers}%
-}{}{}

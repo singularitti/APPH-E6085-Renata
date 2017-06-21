@@ -222,3 +222,5 @@ TSWLatexianTemp*
 *.xdv
 *.aux 
 review.pdf
+
+\.DS_Store

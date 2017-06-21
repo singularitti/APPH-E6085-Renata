@@ -24,12 +24,43 @@ are constructed by radial wave-function and spherical harmonics
 \begin{align}
 	\phi_{i, \bm{R}}         & = \phi_{nl} (\bm{r} - \bm{R}) Y_L(\bm{r}),         \\
 	\tilde{\phi}_{i, \bm{R}} & = \tilde{\phi}_{nl} (\bm{r} - \bm{R}) Y_L(\bm{r}),
+	\label{eq:tildephi}
 \end{align}
 where $i = (n, l, m)$ and $Y = (l, m)$.\cite{Mortensen:2005ep}
+It is required that
+\begin{equation}
+	\phi_{i, \bm{R}} = \tilde{\phi}_{i, \bm{R}} \text{ outside } R_c.
+\end{equation}
+The pseudo-density $\tilde{n}$ thus also should be the same as AE density
+$n$ outside $R_c$.
+The valence band function
+\begin{align}
+	\begin{rcases}
+		\psi_{n, \bm{R}} &= \psi_{n, \bm{R}}, \\
+		\tilde{\psi}_{n, \bm{R} &= \tilde{\psi}_{n, \bm{R}},
+	\end{rcases}
+  \text{ for } \abs{\bm{r} - \bm{R}} < R_c,
+\end{align}
+and since
+\begin{equation}
+  \psi_n = \tilde{\psi}_n + \sum_{\bm{R}} (\psi_{\bm{R}} - \tilde{\psi}_{\bm{R}}),
+\end{equation}
+latter term, i.e.,
+the correction to pesudo-wave-function,
+is nonzero only in $\abs{\bm{r} - \bm{R}} < R_c$
+for a certain $\bm{R}$.
+
+Like usual pesudopotential method, there is a cutoff radius for each atom at $R_c$.
 In practice, we often choose the smooth projector functions to be
+\cite{Mortensen:2005ep,rostgaard2009projector}
 \begin{equation}
 	\tilde{p}_{i, \bm{R}} = \tilde{p}_{nl} (\bm{r} - \bm{R}) Y_L (\bm{R}),
-	\cite{Mortensen:2005ep,rostgaard2009projector}
+	\label{eq:tildep}
+\end{equation}
+and it must satisfy
+\begin{equation}
+	\braket{ \tilde{p}_{i, \bm{R}} | \tilde{\phi}_{j, \bm{R}} } = \delta_{ij}
+	\text{ for } \abs{\bm{r} - \bm{R}} < R_c.
 \end{equation}
 
 The core states of the atoms, $\phi_{i}^\text{core}(\bm{r} - \bm{R})$,
@@ -55,5 +86,21 @@ that is, they share same set of $\{ P_{i, n} \}$, where
 \end{equation}
 
 
-Like usual pesudopotential method, there is a cutoff radius for each atom at $R_c$. For $r > R_c$, $\phi_{i, \bm{R}} = \tilde{\phi}_{i, \bm{R}}$. Thus $\eqref{eq:T}$ is
+For $r > R_c$, $\phi_{i, \bm{R}} = \tilde{\phi}_{i, \bm{R}}$. Thus $\eqref{eq:T}$ is
 $1$, i.e., the rest part of $\hat{\mathcal{T}}$ is $0$ outside augmentation sphere.
+
+
+In $\eqref{eq:tildephi}$ and $\eqref{eq:tildep}$, how do we choose the radial
+wave-functions? Usually,
+\begin{align}
+	\tilde{\phi}_{nl} & = \sum_{i=0}^{3} c_i r^{2i},                    \\
+	\tilde{p}_{nl}    & = \bigg( -\frac{ 1 }{ 2 }\nabla^2 + \tilde{v} -
+	\varepsilon_{nl} \bigg) \tilde{\phi}_{nl}.
+\end{align}
+The coefficients $c_i$ are chosen so that $\tilde{\phi}_{nl}(\bm{r} - \bm{R})$ joins
+$\phi_{nl}(\bm{r} - \bm{R})$ smoothly at $r = R_c$.
+
+
+In practical calculations, it is usually enough to include one or two
+projector functions per angular momentum channel.\cite{Enkovaara:2010jd}
+
