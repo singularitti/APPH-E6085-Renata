@@ -21,7 +21,7 @@ K and B \cite{Kleinman:1982cx} noticed tried to rewrite it into a pure local pot
 nonlocal one. First they considered the relativistic form of $\eqref{eq:hsc-pp}$,
 i.e.,
 \begin{equation}
-	V_j(\bm{r}) = \mathcal{V} (r) + \sum_{lm} \ket{Y_{lm}} \delta V_j \bra{Y_{lm}},
+	V_j^\text{SL} (\bm{r}) = \mathcal{V} (r) + \sum_{lm} \ket{Y_{lm}} \delta V_j \bra{Y_{lm}},
 \end{equation}
 where $j = l \pm \frac{ 1 }{ 2 }$
 \footnote{
@@ -35,7 +35,7 @@ then replace the semilocal potential $\delta V_j^\text{SL}$ with a pure nonlocal
 	= \sum_{lm} \frac{ \ket{\delta V_j \Phi_{jm}}  \bra{\delta V_j \Phi_{jm}} }{
 		\braket{ \Phi_{jm} | \delta V_j | \Phi_{jm} } },
 \end{equation}
-here $\Phi_{jm}$ is the eigenfunction of $\delta V_j^\text{SL}$.
+here $\Phi_{jm}$ is the eigenfunction of $V_j^\text{SL}$.
 Then we have
 \begin{equation}\label{eq:vnl-phi}
 	\begin{split}
@@ -73,21 +73,21 @@ In $\eqref{eq:vnl-phi}$, $\bra{\delta V_j \Phi_{jm}}$ acts as a projector,\cite{
 	\Phi_{jm} (\bm{r}) \Phi_{j'm'} (\bm{r}).
 \end{equation}
 This projector
-is \emph{local} because $\delta V_j$ is $0$ out side core radius $R_c$, 
+is \emph{local} because $\delta V_j$ is $0$ out side core radius $R_c$,
 irrespective of how $\Phi_{jm}$ is.
 So generally,\cite{martin2004electronic}
 \begin{equation}
-  \braket{ \psi_i | \delta V_j^\text{NL} | \psi_k }
-  = \sum_{lm} 
-  \frac{ \braket{\psi_i | \delta V_j \Phi_{jm}}  
-    \braket{\delta V_j \Phi_{jm}  | \psi_k } }{
-    \braket{ \Phi_{jm} | \delta V_j | \Phi_{jm} } },
+	\braket{ \psi_i | \delta V_j^\text{NL} | \psi_k }
+	= \sum_{lm}
+	\frac{ \braket{\psi_i | \delta V_j \Phi_{jm}}
+		\braket{\delta V_j \Phi_{jm}  | \psi_k } }{
+		\braket{ \Phi_{jm} | \delta V_j | \Phi_{jm} } },
 \end{equation}
 here only projection operations are need to be done,
 comparing to
 \begin{equation}
-  \braket{ \psi_i | \delta V_j^\text{SL} | \psi_k }
-  = \int d\bm{r} \, \psi_i \delta V_j^\text{SL} \psi_k,
+	\braket{ \psi_i | \delta V_j^\text{SL} | \psi_k }
+	= \int d\bm{r} \, \psi_i \delta V_j^\text{SL} \psi_k,
 \end{equation}
 where whole integral should be done for each pair of $i$ and $j$.
 

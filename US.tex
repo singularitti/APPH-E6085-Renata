@@ -3,3 +3,42 @@
 \subsubsection{Ultrasoft pesudopotential construction}
 \label{sssec:us}
 
+\citeauthor{Vanderbilt:1990is} construct a pesudo-wave-function $\ket{ \phi_i }$, and a
+pesudopotential $\delta V^\text{NL}$ associated with it,
+satisfying for $r \ge R_c$,
+\begin{align}
+	\ket{ \phi_i }                        & = \ket{ \psi_i }, \\
+	\delta V^\text{NL}                    & = 0,              \\
+	V &= V^\text{LOC} + \delta V^\text{NL} = \mathcal{V},
+\end{align}
+where $\mathcal{V}$ is the all-electron potential.
+To introduce $\delta V^\text{NL}$, first construct wave-function
+\begin{equation}
+	\ket{ \chi_i } = \bigg( \varepsilon_i -
+	\Big( - \frac{ 1 }{ 2 } \nabla^2 + V^\text{LOC} \Big)
+	\bigg) \ket{ \phi_i },
+\end{equation}
+this wave-function vanishes outside $R_c$ since
+\begin{equation}\label{eq:us-ae}
+	\bigg( \varepsilon_i -
+	\Big( - \frac{ 1 }{ 2 } \nabla^2 + \mathcal{V} \Big)
+	\bigg) \ket{ \psi_i } = 0.
+\end{equation}
+Then the nonlocal operator is
+\begin{equation}\label{eq:us-pp}
+	\delta V^\text{NL} = \frac{ \ket{\hat{P} \phi_i } \bra{ \hat{P} \phi_i }}{
+		\braket{ \phi_i | \hat{P} | \phi_i } }
+	=
+	\frac{ \ket{ \chi_i } \bra{ \chi_i } }{
+		\braket{ \chi_i | \phi_i }
+	}
+\end{equation}
+which has the form of KB form $\eqref{eq:nl-pp}$.
+Apply
+\begin{equation}
+	H =  - \frac{ 1 }{ 2 } \nabla^2 + V^\text{LOC} + \delta V^\text{NL}
+\end{equation}
+to $\ket{ \phi_i }$ it will yield $\varepsilon_i \ket{ \phi_i }$ directly,
+where $\varepsilon_i$ is the all-electron eigenvalue, see $\eqref{eq:us-ae}$.
+Thus we know $V^\text{LOC} + \delta V^\text{NL}$ is a validated
+pesudopotential.

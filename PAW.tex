@@ -1,0 +1,59 @@
+% !TEX root = review.tex
+
+\subsubsection{PAW method}
+\label{sssec:paw}
+
+In general, only ground state properties, such as total state energy or
+equilibrium geometries can be investigated by DFT.\cite{Enkovaara:2010jd}
+The PAW method is formally an all-electron method which provides an exact linear
+transformation
+$\hat{\mathcal{T}}$
+between the smooth pseudo-wave-functions $\psi_n$ and the
+all-electron wave-functions $\tilde{\psi}_n$, where $n$ is the band index.
+The PAW approximation contains all the information about the nodal structure of
+wave-functions near the nuclei, and it is always possible to reconstruct the
+all-electron wave-functions from the pseudo-wave-functions.
+In solid state physics, it is popular to use plane-wave basis set, while in
+quantum chemistry localized orbitals are more often applied.
+The former employs fast Fourier transform, and higher accuracy can be achieved
+systematically by increasing the cutoff energy. The localized orbital method does
+not have this advantage. But it can provide very compact basis set.
+
+The AE partials wave, $\phi_{i, \bm{R}}$, and PS partial wave $\tilde{\phi}_{i, \bm{R}}$,
+are constructed by radial wave-function and spherical harmonics
+\begin{align}
+	\phi_{i, \bm{R}}         & = \phi_{nl} (\bm{r} - \bm{R}) Y_L(\bm{r}),         \\
+	\tilde{\phi}_{i, \bm{R}} & = \tilde{\phi}_{nl} (\bm{r} - \bm{R}) Y_L(\bm{r}),
+\end{align}
+where $i = (n, l, m)$ and $Y = (l, m)$.\cite{Mortensen:2005ep}
+In practice, we often choose the smooth projector functions to be
+\begin{equation}
+	\tilde{p}_{i, \bm{R}} = \tilde{p}_{nl} (\bm{r} - \bm{R}) Y_L (\bm{R}),
+	\cite{Mortensen:2005ep,rostgaard2009projector}
+\end{equation}
+
+The core states of the atoms, $\phi_{i}^\text{core}(\bm{r} - \bm{R})$,
+are fixed to the reference shape for the isolated atom. This is called the
+frozen core approximation.\cite{rostgaard2009projector}
+
+
+Then we introduce one-center expansion,
+\begin{align}
+	\psi_{n, \bm{R}}         & = \sum_{\bm{R}} \phi_{i, \bm{R}} P_{i, n} (\bm{r} - \bm{R}), \\
+	\tilde{\psi}_{n, \bm{R}} & =
+	\sum_{\bm{R}} \tilde{\phi} _{i, \bm{R}} P_{i, n} (\bm{r} - \bm{R}),
+\end{align}
+that is, they share same set of $\{ P_{i, n} \}$, where
+\begin{equation}
+	P_{i, n} (\bm{r} - \bm{R}) = \braket{ \tilde{p}_{i, \bm{R}} | \tilde{\psi}_n (\bm{r}) }.
+\end{equation}
+
+
+\begin{equation}\label{eq:T}
+	\hat{\mathcal{T}} = 1 + \sum_{\bm{R}} \sum_{i}
+	(\ket{\phi_{i, \bm{R}}} - \ket{\tilde{\phi}_{i, \bm{R}}}) \bra{\tilde{p}_i},
+\end{equation}
+
+
+Like usual pesudopotential method, there is a cutoff radius for each atom at $R_c$. For $r > R_c$, $\phi_{i, \bm{R}} = \tilde{\phi}_{i, \bm{R}}$. Thus $\eqref{eq:T}$ is
+$1$, i.e., the rest part of $\hat{\mathcal{T}}$ is $0$ outside augmentation sphere.
