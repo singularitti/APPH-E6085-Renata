@@ -2,7 +2,6 @@
 %!TEX encoding = UTF-8
 %!BIB TS-program = bibtex
 %!TEX spellcheck = en_US
-% !TEX outputDirectory = build.noindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[12pt]{article}
 \input{packages}
@@ -12,16 +11,38 @@
 \author{Qi Zhang}								% Author
 \date{}										% Date
 
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+\input{cover}
 \tableofcontents
+\listoffigures
+\listoftables
+\newpage
 
-\include{Kerker}
-\include{KB}
-\include{Troullier}
-\include{US}
-\include{PAW}
+\section{DFT methods}
+\subsection{Pseudopotential method}
+
+\input{Kerker}
+\input{KB}
+\input{Troullier}
+\input{US}
+
+\subsection{All-electron method}
+\input{PAW}
+
+\section{hcp iron in earth core}
+
+\input{experiments}
+\input{phase}
+
+\section{Python package}
 
 \bibliographystyle{unsrt}
 \bibliography{ref}
